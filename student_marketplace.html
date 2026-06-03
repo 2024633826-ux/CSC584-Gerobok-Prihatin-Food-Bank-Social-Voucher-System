@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student - View Food Bank</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333; margin: 0; padding: 0; }
+        .navbar { background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; padding: 15px 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .navbar h1 { margin: 0; font-size: 22px; font-weight: 600; }
+        
+        .layout-container { display: flex; padding: 30px; gap: 30px; max-width: 1400px; margin: auto; }
+        
+        /* Sidebar Navigation Menu */
+        .sidebar { width: 22%; background: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); height: fit-content; }
+        .sidebar h3 { color: #1e3c72; margin-top: 0; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; font-size: 16px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .sidebar ul { list-style: none; padding: 0; margin: 0; }
+        .sidebar li { margin-bottom: 8px; }
+        .sidebar a { display: block; padding: 12px 15px; color: #555; text-decoration: none; border-radius: 8px; font-weight: 500; transition: 0.3s; }
+        .sidebar a:hover { background-color: #f0f4f8; color: #1e3c72; }
+        .sidebar .active { background-color: #1e3c72; color: white; font-weight: bold; }
+        .sidebar .logout { color: #dc3545; }
+        .sidebar .logout:hover { background-color: #fff5f5; color: #dc3545; }
+
+        /* Content Area Box */
+        .store-container { width: 78%; background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .store-container h2 { margin-top: 0; font-size: 20px; color: #111; }
+        .store-container p { color: #666; font-size: 13px; margin-bottom: 20px; }
+        
+        /* Premium Live Table List */
+        .food-grid-table { width: 100%; border-collapse: collapse; text-align: left; }
+        .food-grid-table th { background-color: #f8fafc; padding: 14px; font-weight: 600; color: #475569; border-bottom: 2px solid #e2e8f0; font-size: 13px; }
+        .food-grid-table td { padding: 16px 14px; border-bottom: 1px solid #edf2f7; font-size: 14px; }
+        .food-grid-table tr:hover { background-color: #f8faff; }
+
+        /* Badges Formatting */
+        .badge-stock { font-weight: 600; color: #0969da; background-color: #ddf4ff; padding: 4px 10px; border-radius: 6px; font-size: 12px; }
+        .badge-cost { font-weight: bold; color: #9a6700; background-color: #fff8c5; padding: 4px 10px; border-radius: 6px; font-size: 12px; }
+        
+        /* Action Button */
+        .btn-redeem { background-color: #1e3c72; color: white; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: 0.2s; box-shadow: 0 2px 4px rgba(30,60,114,0.2); }
+        .btn-redeem:hover { background-color: #162c54; transform: translateY(-1px); }
+        
+        .alert-box { background-color: #fff8f8; border-left: 4px solid #cf222e; padding: 15px; border-radius: 6px; margin-top: 25px; color: #a40e26; font-size: 13px; }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <h1>Gerobok-Prihatin | Student Marketplace</h1>
+    </div>
+
+    <div class="layout-container">
+        <div class="sidebar">
+            <h3>Student Menu</h3>
+            <ul>
+                <li><a href="student_marketplace.html" class="active">🛒 View Food Bank</a></li>
+                <li><a href="student.html">🎟️ My Vouchers</a></li>
+                <li><a href="login.html" class="logout">🚪 Logout</a></li>
+            </ul>
+        </div>
+        
+        <div class="store-container">
+            <h2>🛒 Live Central Storage Food Bank Items</h2>
+            <p>Pilih barangan keperluan sedia ada di bawah untuk membuat tuntutan. Setiap penebusan akan mengurangkan <b>1 unit baki baucar aktif</b> anda dan dihantar kepada pihak HEP untuk kelulusan kupon.</p>
+            
+            <table class="food-grid-table">
+                <thead>
+                    <tr>
+                        <th>Nama Barangan Makanan</th>
+                        <th>Baki Stok Semasa</th>
+                        <th>Kos Baucar Sosial</th>
+                        <th style="text-align: center;">Tindakan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>🌾 Premium White Rice (5kg)</strong></td>
+                        <td><span class="badge-stock">35 unit sedia ada</span></td>
+                        <td><span class="badge-cost">1 Baucar</span></td>
+                        <td align="center"><button type="button" class="btn-redeem" onclick="alert('Permohonan penebusan Beras (5kg) berjaya! Sila semak tab My Vouchers untuk pengesahan tiket kod bar.')">Tuntut Makanan</button></td>
+                    </tr>
+                    <tr>
+                        <td><strong>🍜 Instant Noodles (Pek isi 5)</strong></td>
+                        <td><span class="badge-stock">150 unit sedia ada</span></td>
+                        <td><span class="badge-cost">1 Baucar</span></td>
+                        <td align="center"><button type="button" class="btn-redeem" onclick="alert('Permohonan penebusan Mi Segera berjaya! Tiket anda sedang dijana.')">Tuntut Makanan</button></td>
+                    </tr>
+                    <tr>
+                        <td><strong>🥫 Canned Sardines (150g)</strong></td>
+                        <td><span class="badge-stock">200 unit sedia ada</span></td>
+                        <td><span class="badge-cost">1 Baucar</span></td>
+                        <td align="center"><button type="button" class="btn-redeem" onclick="alert('Permohonan penebusan Sardin Tin berjaya dihantar!')">Tuntut Makanan</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="alert-box">
+                <strong>💡 Nota Pembentangan Projek (Enterprise):</strong> Simulasi klik pada butang "Tuntut Makanan" mewakili fungsi <code>INSERT</code> pangkalan data ke atas jadual permohonan, di mana ia akan disemak secara langsung di portal HEP Staff untuk kelulusan penyerahan barangan fizikal.
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
