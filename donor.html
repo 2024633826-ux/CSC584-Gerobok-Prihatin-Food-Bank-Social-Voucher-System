@@ -22,51 +22,171 @@
             </td>
             
             <td width="80%" valign="top">
+                
                 <table border="1" width="100%" cellpadding="10">
                     <tr>
                         <td>
-                            <h3>Welcome, Aziz!</h3>
-                            <p><em>Thank you for your generosity!</em></p>
+                            <h3>Welcome Back, Aziz!</h3>
+                            <p><em>Thank you for your ongoing community generosity!</em></p>
+                            <small>Account Classification: Gold Tier Contributor</small>
                         </td>
-                        <td align="center" width="30%">
-                            <strong>Total Donated Items</strong>
+                        <td align="center" width="22%">
+                            <strong>Total Contributed</strong>
                             <h1>50</h1>
-                            <p>meals/items logged</p>
+                            <p><small>items registered</small></p>
+                        </td>
+                        <td align="center" width="22%">
+                            <strong>Verified & Issued</strong>
+                            <h1>42</h1>
+                            <p><small>allocated to students</small></p>
+                        </td>
+                        <td align="center" width="22%">
+                            <strong>Pending Drop-off</strong>
+                            <h1>8</h1>
+                            <p><small>awaiting HEP check</small></p>
                         </td>
                     </tr>
                 </table>
                 <br><br>
 
-                <fieldset>
-                    <legend><h3>Log New Donation Package</h3></legend>
-                    <p style="font-size: 14px; color: #555;">Please enter the details of the items you wish to drop off at the central storage unit repository.</p>
-                    <br>
-                    
-                    <form action="donorHistory.html" method="POST">
-                        <table border="0" cellpadding="5">
-                            <tr>
-                                <td><label><b>Item Name / Description:</b></label></td>
-                                <td><input type="text" name="item_name" size="40" placeholder="e.g., Cooking Oil (1kg Pouch)" required></td>
-                            </tr>
-                            <tr>
-                                <td><label><b>Batch Quantity Amount:</b></label></td>
-                                <td><input type="number" name="quantity" min="1" style="width: 100px;" required> units</td>
-                            </tr>
-                            <tr>
-                                <td><label><b>Package Expiry Date:</b></label></td>
-                                <td><input type="date" name="expiry_date" required></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>
-                                    <br>
-                                    <input type="submit" value="Submit Donation" style="padding: 5px 15px; font-weight: bold;">
-                                    <input type="reset" value="Clear Form">
-                                </td>
-                            </tr>
-                        </table>
-                    </form>
-                </fieldset>
+                <table border="0" width="100%" cellpadding="5">
+                    <tr>
+                        <td width="55%" valign="top">
+                            <fieldset>
+                                <legend><h3>Log New Donation Package</h3></legend>
+                                <p style="font-size: 13px; color: #555;">Please fill out the precise specifications of your food bank contribution below.</p>
+                                <br>
+                                
+                                <form action="donorHistory.html" method="get" onsubmit="alert('Donation batch successfully logged! Thank you for your contribution. Redirecting to your Donation History log.');">
+                                    <table border="0" cellpadding="6" width="100%">
+                                        <tr>
+                                            <td><label><b>Item Category:</b></label></td>
+                                            <td>
+                                                <select name="item_category" style="padding: 3px; width: 100%;" required>
+                                                    <option value="">-- Select Category --</option>
+                                                    <option value="Staples">Essential Staples (Rice, Flour)</option>
+                                                    <option value="Dry Food">Dry Food (Noodles, Biscuits)</option>
+                                                    <option value="Canned Food">Canned Goods (Sardines, Beans)</option>
+                                                    <option value="Cooking Oil">Condiments & Oils</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><label><b>Item Name:</b></label></td>
+                                            <td><input type="text" name="item_name" style="width: 95%;" placeholder="e.g., Cooking Oil (1kg Pouch)" required></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label><b>Quantity Amount:</b></label></td>
+                                            <td><input type="number" name="quantity" min="1" style="width: 80px; padding: 3px;" placeholder="0" required> units</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label><b>Expiry Date:</b></label></td>
+                                            <td><input type="date" name="expiry_date" required></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <br>
+                                                <input type="submit" value="Submit Donation Package" style="padding: 5px 15px; font-weight: bold;">
+                                                <input type="reset" value="Clear" style="padding: 5px 10px;">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </form>
+                            </fieldset>
+                        </td>
+
+                        <td width="45%" valign="top">
+                            <table border="1" width="100%" cellpadding="8" style="border-collapse: collapse;">
+                                <thead>
+                                    <tr bgcolor="#f0f0f0">
+                                        <th colspan="3" align="left">⚠️ Food Bank Urgent Deficit Alert</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Target Item Need</strong></td>
+                                        <td><strong>Status</strong></td>
+                                        <td><strong>Priority Level</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Premium White Rice (5kg)</td>
+                                        <td>Low Stock (35 left)</td>
+                                        <td><font color="#000"><b>CRITICAL</b></font></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Condensed Milk (350g)</td>
+                                        <td>Out of Stock (0 left)</td>
+                                        <td><font color="#000"><b>CRITICAL</b></font></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Canned Sardines (150g)</td>
+                                        <td>Stable (200 left)</td>
+                                        <td>Moderate Need</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br>
+                            <p style="font-size: 12px; margin: 0;"><a href="donorWishlist.html">View Detailed Community Live Wishlist &rarr;</a></p>
+                        </td>
+                    </tr>
+                </table>
+                <br><br>
+
+                <h3>📋 Recent Drop-off Consignments Activity</h3>
+                <p style="font-size: 14px;">Track the status of your recently delivered physical boxes at the HEP counter.</p>
+                <table border="1" width="100%" cellpadding="8" style="border-collapse: collapse; text-align: left;">
+                    <thead>
+                        <tr bgcolor="#f0f0f0">
+                            <th>Batch ID</th>
+                            <th>Item Details</th>
+                            <th>Qty Sent</th>
+                            <th>Logged Date</th>
+                            <th>Verification Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>DN-BATCH-902</td>
+                            <td>Cream Crackers Biscuits (Large Pack)</td>
+                            <td>30 units</td>
+                            <td>2026-06-01</td>
+                            <td><strong>VERIFIED & STOCK-IN</strong></td>
+                        </tr>
+                        <tr>
+                            <td>DN-BATCH-889</td>
+                            <td>Sweetened Condensed Milk (350g)</td>
+                            <td>20 units</td>
+                            <td>2026-05-28</td>
+                            <td><strong>VERIFIED & STOCK-IN</strong></td>
+                        </tr>
+                        <tr>
+                            <td>DN-BATCH-915</td>
+                            <td>Cooking Oil (1kg Pouch)</td>
+                            <td>8 units</td>
+                            <td>Today</td>
+                            <td><i>Awaiting Delivery Check (PENDING)</i></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br><br>
+
+                <table border="1" width="100%" cellpadding="8" style="border-style: dashed;">
+                    <tr>
+                        <td>
+                            <strong>Gerobok Prihatin Food Handling & Safety Protocols:</strong>
+                            <ul>
+                                <li>Ensure all canned items contain no heavy physical dents or seal structural damage before logging.</li>
+                                <li>Donated products will be verified by HEP inventory managers at the drop-off facility before status turns to 'VERIFIED'.</li>
+                                <li>Expired items or items without clear labels will be safely discarded following local food bank compliance rules.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <p><small>* Note: Logging a donation triggers the system backend to register incoming logistics, helping HEP plan voucher allocation tokens for pending students.</small></p>
+
             </td>
         </tr>
     </table>
