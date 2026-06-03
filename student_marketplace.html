@@ -6,7 +6,7 @@
 </head>
 <body>
 
-    <h1>Student View | Gerobok Prihatin System</h1>
+    <h1>Student | Gerobok Prihatin System</h1>
     <hr>
 
     <table border="1" width="100%" cellpadding="10">
@@ -16,6 +16,7 @@
                 <ul>
                     <li><strong>Food Bank</strong></li>
                     <li><a href="student.html">My Voucher</a></li>
+                    <li><a href="studentProfile.html">My Profile & History</a></li>
                     <li><a href="logout.html">Logout</a></li>
                 </ul>
             </td>
@@ -23,10 +24,10 @@
             <td width="80%" valign="top">
                 
                 <h2>Available Food Items Marketplace</h2>
-                <p>Select an item below to submit a claim request. Each request will deduct 1 voucher from your balance and requires HEP staff verification before generating your active Voucher Number and PIN.</p>
+                <p>Select an item below to claim. Each claim will deduct 1 voucher from your balance and requires HEP approval to generate your Voucher Number and PIN.</p>
                 <br>
 
-                <form action="student.html" method="get" onsubmit="alert('Food bank item successfully requested! Your application has been submitted to HEP for verification.');">
+                <form action="student.html" method="get" onsubmit="alert('Item successfully requested! Your request has been sent for HEP approval.');">
                     <table border="1" cellpadding="8" width="100%">
                         <thead>
                             <tr>
@@ -66,7 +67,7 @@
                 </form>
 
                 <br>
-                <p><small>* Note: Submitting a request updates the food bank distribution system. Please collect your item once the approval status changes to "APPROVED".</small></p>
+                <p><small>* Note: Submitting a request triggers the system backend to verify eligibility before creating the active Voucher No & PIN numbers.</small></p>
 
             </td>
         </tr>
