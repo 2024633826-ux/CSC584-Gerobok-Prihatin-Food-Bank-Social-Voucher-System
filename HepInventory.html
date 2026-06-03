@@ -17,8 +17,7 @@
                     <li><a href="hep_staff.html">Dashboard</a></li>
                     <li><strong>Manage Inventory</strong></li>
                     <li><a href="HepDistribution.html">Manage Distribution</a></li>
-                    <li><a href="login.html">Logout</a></li>
-                </ul>
+                    <li><a href="logout.html">Logout</a></li> </ul>
             </td>
             
             <td width="80%" valign="top">
@@ -26,8 +25,7 @@
                 
                 <fieldset>
                     <legend><h3>+ Add New Stock Item (Create)</h3></legend>
-                    <form action="hep_inventory.html" method="POST">
-                        <table border="0" cellpadding="5">
+                    <form action="HepInventory.html" method="POST"> <table border="0" cellpadding="5">
                             <tr>
                                 <td><label>Item Name:</label></td>
                                 <td><input type="text" name="item_name" required size="30"></td>
@@ -42,14 +40,17 @@
                             </tr>
                             <tr>
                                 <td></td>
-                                <td><input type="submit" value="Save New Item"></td>
+                                <td>
+                                    <br>
+                                    <input type="submit" value="Add to Inventory">
+                                </td>
                             </tr>
                         </table>
                     </form>
                 </fieldset>
                 <br>
 
-                <h3>Active Inventory Ledger</h3>
+                <h3>Current Stock Inventory Records</h3>
                 <table border="1" cellpadding="8" width="100%">
                     <thead>
                         <tr bgcolor="#f0f0f0">
