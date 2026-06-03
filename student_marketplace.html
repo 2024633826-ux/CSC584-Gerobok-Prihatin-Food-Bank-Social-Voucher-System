@@ -23,15 +23,52 @@
             
             <td width="80%" valign="top">
                 
+                <table border="1" width="100%" cellpadding="10">
+                    <tr>
+                        <td>
+                            <strong>Current User:</strong> Hamzah Bin Ahmad (SUG2026-4412)<br>
+                            <small>Portal Status: Online Verified</small>
+                        </td>
+                        <td align="right" width="40%">
+                            <strong>Voucher Token Balance:</strong> 
+                            <span style="font-size: 18px; font-weight: bold;">3 Tokens Available</span>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+
                 <h2>Available Food Items Marketplace</h2>
                 <p>Select an item below to claim. Each claim will deduct 1 voucher from your balance and requires HEP approval to generate your Voucher Number and PIN.</p>
+                
+                <fieldset>
+                    <legend>Filter Items</legend>
+                    <table border="0" width="100%" cellpadding="5">
+                        <tr>
+                            <td>
+                                Search Item: <input type="text" placeholder="e.g., Rice, Sardines..." disabled>
+                                <button type="button">Search</button>
+                            </td>
+                            <td align="right">
+                                Category: 
+                                <select disabled>
+                                    <option>All Segments</option>
+                                    <option>Dry Food</option>
+                                    <option>Canned Food</option>
+                                    <option>Essential Staples</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
                 <br>
 
                 <form action="student.html" method="get" onsubmit="alert('Item successfully requested! Your request has been sent for HEP approval.');">
                     <table border="1" cellpadding="8" width="100%">
                         <thead>
-                            <tr>
+                            <tr bgcolor="#f0f0f0">
+                                <th>Category</th>
                                 <th>Food Item Name</th>
+                                <th>Estimated Expiry</th>
                                 <th>Available Quantity</th>
                                 <th>Voucher Cost</th>
                                 <th>Actions</th>
@@ -39,7 +76,9 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Premium White Rice (5kg)</td>
+                                <td>Staples</td>
+                                <td><strong>Premium White Rice (5kg)</strong></td>
+                                <td>Dec 2026</td>
                                 <td>35 bags remaining</td>
                                 <td>1 Voucher</td>
                                 <td align="center">
@@ -47,7 +86,9 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Instant Noodles (Pack of 5)</td>
+                                <td>Dry Food</td>
+                                <td><strong>Instant Noodles (Pack of 5)</strong></td>
+                                <td>Oct 2026</td>
                                 <td>150 packs remaining</td>
                                 <td>1 Voucher</td>
                                 <td align="center">
@@ -55,7 +96,9 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Canned Sardines (150g)</td>
+                                <td>Canned Food</td>
+                                <td><strong>Canned Sardines (150g)</strong></td>
+                                <td>Jan 2027</td>
                                 <td>200 cans remaining</td>
                                 <td>1 Voucher</td>
                                 <td align="center">
@@ -65,6 +108,20 @@
                         </tbody>
                     </table>
                 </form>
+
+                <br>
+                <table border="1" width="100%" cellpadding="8" style="border-style: dashed;">
+                    <tr>
+                        <td>
+                            <strong>Food Bank Fair-Usage & Distribution Rules:</strong>
+                            <ul>
+                                <li>Students are strictly limited to item limits allowed by active wallet balances.</li>
+                                <li>All requested goods must be collected from the HEP central warehouse within 7 working days post-approval.</li>
+                                <li>Uncollected approvals will automatically cycle back into community distribution assets.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
 
                 <br>
                 <p><small>* Note: Submitting a request triggers the system backend to verify eligibility before creating the active Voucher No & PIN numbers.</small></p>
