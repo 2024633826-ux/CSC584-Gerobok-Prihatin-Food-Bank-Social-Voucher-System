@@ -22,11 +22,12 @@
             </td>
             
             <td width="80%" valign="top">
+                
                 <table border="1" width="100%" cellpadding="10">
                     <tr>
                         <td>
                             <h3>Welcome, Aziz!</h3>
-                            <p><em>Thank you for your generosity!</em></p>
+                            <p><em>Thank you for your ongoing generosity!</em></p>
                         </td>
                         <td align="center" width="30%">
                             <strong>Total Donated Items</strong>
@@ -39,34 +40,64 @@
 
                 <fieldset>
                     <legend><h3>Log New Donation Package</h3></legend>
-                    <p style="font-size: 14px; color: #555;">Sila masukkan maklumat barangan sumbangan anda.</p>
+                    <p style="font-size: 14px; color: #555;">Please fill out the precise specifications of your food bank contribution below.</p>
                     <br>
                     
-                    <form action="donorHistory.html" method="POST">
-                        <table border="0" cellpadding="5">
+                    <form action="donorHistory.html" method="get" onsubmit="alert('Donation batch successfully logged! Thank you for your contribution. Redirecting to your Donation History log.');">
+                        <table border="0" cellpadding="8" width="100%">
+                            <tr>
+                                <td width="25%"><label><b>Item Category:</b></label></td>
+                                <td>
+                                    <select name="item_category" style="padding: 3px;" required>
+                                        <option value="">-- Select Category --</option>
+                                        <option value="Staples">Essential Staples (Rice, Flour)</option>
+                                        <option value="Dry Food">Dry Food (Noodles, Biscuits)</option>
+                                        <option value="Canned Food">Canned Goods (Sardines, Beans)</option>
+                                        <option value="Cooking Oil">Condiments & Oils</option>
+                                    </select>
+                                </td>
+                            </tr>
                             <tr>
                                 <td><label><b>Item Name / Description:</b></label></td>
-                                <td><input type="text" name="item_name" size="40" placeholder="e.g., Cooking Oil (1kg Pouch)" required></td>
+                                <td><input type="text" name="item_name" size="50" placeholder="e.g., Cooking Oil (1kg Pouch)" required></td>
                             </tr>
                             <tr>
                                 <td><label><b>Batch Quantity Amount:</b></label></td>
-                                <td><input type="number" name="quantity" min="1" style="width: 100px;" required> units</td>
+                                <td><input type="number" name="quantity" min="1" style="width: 100px; padding: 3px;" placeholder="0" required> units</td>
                             </tr>
                             <tr>
                                 <td><label><b>Package Expiry Date:</b></label></td>
-                                <td><input type="date" name="expiry_date" required></td>
+                                <td><input type="date" name="expiry_date" required> <small style="color: #666;">(Must be valid for at least 6 months)</small></td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td>
                                     <br>
                                     <input type="submit" value="Submit Donation" style="padding: 5px 15px; font-weight: bold;">
-                                    <input type="reset" value="Clear Form">
+                                    <input type="reset" value="Clear Form" style="padding: 5px 10px;">
                                 </td>
                             </tr>
                         </table>
                     </form>
                 </fieldset>
+                <br><br>
+
+                <table border="1" width="100%" cellpadding="8" style="border-style: dashed;">
+                    <tr>
+                        <td>
+                            <strong>Gerobok Prihatin Food Handling & Safety Protocols:</strong>
+                            <ul>
+                                <li>Ensure all canned items contain no heavy physical dents or seal structural damage before logging.</li>
+                                <li>Donated products will be verified by HEP inventory managers at the drop-off facility before status turns to 'VERIFIED'.</li>
+                                <li>Expired items or items without clear labels will be safely discarded following local food bank compliance rules.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <p><small>* Note: Logging a donation triggers the system backend to register incoming logistics, helping HEP plan voucher allocation tokens for pending students.</small></p>
+
             </td>
         </tr>
     </table>
