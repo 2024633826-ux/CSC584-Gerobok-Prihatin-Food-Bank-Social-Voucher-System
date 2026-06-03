@@ -23,45 +23,45 @@
             
             <td width="80%" valign="top">
                 
-                <table border="1" width="100%" cellpadding="10">
+                <table border="1" width="100%" cellpadding="10" style="background-color: #fafafa;">
                     <tr>
                         <td>
                             <strong>Active Distribution Window:</strong> Semester April-July 2026<br>
                             <small>Authority Role: Higher Education Officer Counter</small>
                         </td>
-                        <td align="center" width="25%">
+                        <td align="center" width="25%" bgcolor="#e0e0e0">
                             <strong>Pending Approvals</strong>
                             <h2 style="margin:5px;">2 Requests</h2>
                         </td>
-                        <td align="center" width="25%">
-                            <strong>Disbursed This Week</strong>
-                            <h2 style="margin:5px;">148 Items</h2>
+                        <td align="center" width="25%" bgcolor="#333333">
+                            <font color="#ffffff"><strong>Disbursed This Week</strong></font>
+                            <h2 style="margin:5px;"><font color="#ffffff">148 Items</font></h2>
                         </td>
                     </tr>
                 </table>
                 <br><br>
 
-                <fieldset>
+                <fieldset style="border: 1px solid #333333;">
                     <legend><h3>Log Manual Emergency Request</h3></legend>
-                    <p style="font-size: 13px;">Use this module to manually issue a voucher bypass if a student requests emergency rations in person at the office.</p>
+                    <p style="font-size: 13px; color: #666666;">Use this module to manually issue a voucher bypass if a student requests emergency rations in person at the office.</p>
                     
                     <form action="hepDistribution.html" method="get" onsubmit="alert('Emergency distribution request successfully initialized and added to queue.');">
                         <table border="0" cellpadding="6" width="100%">
                             <tr>
-                                <td>Student Name: <input type="text" placeholder="e.g., Hamzah Bin Ahmad" required></td>
-                                <td>Student ID: <input type="text" placeholder="SUG2026-4412" size="12" required></td>
+                                <td>Student Name:<br><input type="text" placeholder="e.g., Hamzah Bin Ahmad" required></td>
+                                <td>Student ID:<br><input type="text" placeholder="SUG2026-4412" size="12" required></td>
                                 <td>
                                     Select Item:<br>
-                                    <select required>
+                                    <select required style="padding: 2px;">
                                         <option value="">-- Select Stock --</option>
                                         <option>Premium White Rice (5kg)</option>
                                         <option>Instant Noodles (Pack of 5)</option>
                                         <option>Canned Sardines (150g)</option>
                                     </select>
                                 </td>
-                                <td>Qty: <input type="number" min="1" max="5" value="1" style="width:50px;"></td>
+                                <td>Qty:<br><input type="number" min="1" max="5" value="1" style="width:50px; padding: 2px;"></td>
                                 <td valign="bottom">
-                                    <input type="submit" value="+ Create Request" style="font-weight:bold; cursor:pointer;">
+                                    <input type="submit" value="+ Create Request" style="font-weight:bold; background-color: #333333; color: #ffffff; border: 1px solid #000000; padding: 4px 10px; cursor:pointer;">
                                 </td>
                             </tr>
                         </table>
@@ -70,47 +70,63 @@
                 <br><br>
 
                 <h2>Active Requests & Voucher Issuance</h2>
-                <p style="font-size: 14px; margin-top:0;">Review, modify item quantities, approve vouchers, or purge erroneous entries from the system queue.</p>
+                <p style="font-size: 14px; margin-top:0; color: #666666;">Review, modify item quantities, approve vouchers, or purge erroneous entries from the system queue.</p>
                 
                 <table border="1" cellpadding="8" width="100%" style="border-collapse: collapse;">
                     <thead>
-                        <tr bgcolor="#f0f0f0">
-                            <th>Student Demographics</th>
-                            <th>Item Requested</th>
-                            <th>Quantity Allowed</th>
-                            <th>Submission Date</th>
-                            <th>Status State</th>
-                            <th>Administrative Actions</th>
+                        <tr bgcolor="#333333">
+                            <th><font color="#ffffff">Student Demographics</font></th>
+                            <th><font color="#ffffff">Item Requested</font></th>
+                            <th><font color="#ffffff">Quantity Allowed</font></th>
+                            <th><font color="#ffffff">Submission Date</font></th>
+                            <th><font color="#ffffff">Status State</font></th>
+                            <th><font color="#ffffff">Administrative Actions</font></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>
                                 <strong>Hamzah (Ahmad)</strong><br>
-                                <small>ID: SUG2026-4412</small>
+                                <small style="color: #666666;">ID: SUG2026-4412</small>
                             </td>
                             <td>Premium White Rice (5kg)</td>
                             <td align="center">
                                 <input type="number" value="1" min="1" max="3" style="width: 45px; text-align: center;"> Bag
                             </td>
                             <td>2026-06-01</td>
-                            <td><b>Awaiting HEP</b></td>
+                            <td align="center" bgcolor="#e0e0e0"><strong>Pending</strong></td>
                             <td>
-                                <button type="button" style="font-weight: bold; cursor:pointer;" onclick="alert('Voucher authorized. Access Code & PIN generated and sent to Hamzah.')">Approve</button>
-                                <button type="button" style="cursor:pointer;" onclick="alert('Request configurations updated successfully.')">Update Qty</button>
-                                <button type="button" style="cursor:pointer;" onclick="confirm('Are you sure you want to completely delete this request row from database logs?') ? alert('Row dropped.') : null;">Delete</button>
+                                <button type="button" style="background-color: #000000; color: #ffffff; border: 1px solid #000000; font-weight: bold; padding: 4px 8px; cursor:pointer;" onclick="alert('Voucher authorized. Access Code & PIN generated and sent to Hamzah.')">Approve</button>
+                                <button type="button" style="background-color: #ffffff; color: #333333; border: 1px solid #cccccc; padding: 4px 8px; cursor:pointer;" onclick="alert('Request configurations updated successfully.')">Update Qty</button>
+                                <button type="button" style="background-color: #f0f0f0; color: #000000; border: 1px solid #cccccc; padding: 4px 8px; cursor:pointer;" onclick="confirm('Are you sure you want to completely delete this request row from database logs?') ? alert('Row dropped.') : null;">Delete</button>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <strong>Siti Aminah</strong><br>
-                                <small>ID: SAK2026-1189</small>
+                                <small style="color: #666666;">ID: SAK2026-1189</small>
                             </td>
                             <td>Instant Noodles (Pack of 5)</td>
                             <td align="center">
                                 <input type="number" value="2" min="1" max="5" style="width: 45px; text-align: center;"> Packs
                             </td>
                             <td>2026-06-03</td>
-                            <td><b>Awaiting HEP</b></td>
+                            <td align="center" bgcolor="#e0e0e0"><strong>Pending</strong></td>
                             <td>
-                                <button type="button" style="font-weight: bold; cursor
+                                <button type="button" style="background-color: #000000; color: #ffffff; border: 1px solid #000000; font-weight: bold; padding: 4px 8px; cursor:pointer;" onclick="alert('Voucher authorized. Access Code & PIN generated and sent to Siti.')">Approve</button>
+                                <button type="button" style="background-color: #ffffff; color: #333333; border: 1px solid #cccccc; padding: 4px 8px; cursor:pointer;" onclick="alert('Request configurations updated successfully.')">Update Qty</button>
+                                <button type="button" style="background-color: #f0f0f0; color: #000000; border: 1px solid #cccccc; padding: 4px 8px; cursor:pointer;" onclick="confirm('Are you sure you want to completely delete this request row from database logs?') ? alert('Row dropped.') : null;">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+
+                <p><small style="color: #666666;">* Note: Confirming an "Approve" action issues transactional commands that automatically subtract units directly from your <code>HepInventory.html</code> central database reserves.</small></p>
+
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
