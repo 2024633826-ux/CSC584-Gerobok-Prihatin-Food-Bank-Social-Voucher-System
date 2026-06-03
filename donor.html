@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Donor - Log Donation</title>
+    <title>Donor - Dashboard</title>
 </head>
 <body>
 
-    <h1>Donor View | Gerobok-Prihatin System</h1>
+    <h1>Donor | Gerobok-Prihatin System</h1>
     <hr>
 
     <table border="1" width="100%" cellpadding="10">
@@ -14,8 +14,8 @@
             <td width="20%" valign="top">
                 <h3>Food Bank System</h3>
                 <ul>
+                     <li><strong>Dashboard</strong></li>
                     <li><a href="donorWishlist.html">Live Wishlist</a></li>
-                    <li><strong>Log Donation</strong></li>
                     <li><a href="donorHistory.html">Donation History</a></li>
                     <li><a href="logout.html">Logout</a></li>
                 </ul>
@@ -52,48 +52,20 @@
                 <table border="0" width="100%" cellpadding="5">
                     <tr>
                         <td width="55%" valign="top">
-                            <fieldset>
-                                <legend><h3>Log New Donation Package</h3></legend>
-                                <p style="font-size: 13px; color: #555;">Please fill out the precise specifications of your food bank contribution below.</p>
-                                <br>
-                                
-                                <form action="donorHistory.html" method="get" onsubmit="alert('Donation batch successfully logged! Thank you for your contribution. Redirecting to your Donation History log.');">
-                                    <table border="0" cellpadding="6" width="100%">
-                                        <tr>
-                                            <td><label><b>Item Category:</b></label></td>
-                                            <td>
-                                                <select name="item_category" style="padding: 3px; width: 100%;" required>
-                                                    <option value="">-- Select Category --</option>
-                                                    <option value="Staples">Essential Staples (Rice, Flour)</option>
-                                                    <option value="Dry Food">Dry Food (Noodles, Biscuits)</option>
-                                                    <option value="Canned Food">Canned Goods (Sardines, Beans)</option>
-                                                    <option value="Cooking Oil">Condiments & Oils</option>
-                                                </select>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><label><b>Item Name:</b></label></td>
-                                            <td><input type="text" name="item_name" style="width: 95%;" placeholder="e.g., Cooking Oil (1kg Pouch)" required></td>
-                                        </tr>
-                                        <tr>
-                                            <td><label><b>Quantity Amount:</b></label></td>
-                                            <td><input type="number" name="quantity" min="1" style="width: 80px; padding: 3px;" placeholder="0" required> units</td>
-                                        </tr>
-                                        <tr>
-                                            <td><label><b>Expiry Date:</b></label></td>
-                                            <td><input type="date" name="expiry_date" required></td>
-                                        </tr>
-                                        <tr>
-                                            <td></td>
-                                            <td>
-                                                <br>
-                                                <input type="submit" value="Submit Donation Package" style="padding: 5px 15px; font-weight: bold;">
-                                                <input type="reset" value="Clear" style="padding: 5px 10px;">
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </form>
-                            </fieldset>
+                            <table border="1" width="100%" cellpadding="15">
+                                <tr>
+                                    <td>
+                                        <h3>Ready to make a new contribution?</h3>
+                                        <p>Your donations directly replenish the Gerobok Prihatin storage facility, allowing verified low-income students to claim essential household supplies using their digital tokens.</p>
+                                        <br>
+                                        <a href="donorForm.html">
+                                            <button type="button" style="padding: 10px 20px; font-weight: bold; cursor: pointer;">
+                                                + Click Here to Log New Donation
+                                            </button>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
                         </td>
 
                         <td width="45%" valign="top">
@@ -112,12 +84,12 @@
                                     <tr>
                                         <td>Premium White Rice (5kg)</td>
                                         <td>Low Stock (35 left)</td>
-                                        <td><font color="#000"><b>CRITICAL</b></font></td>
+                                        <td><strong>CRITICAL</strong></td>
                                     </tr>
                                     <tr>
                                         <td>Condensed Milk (350g)</td>
                                         <td>Out of Stock (0 left)</td>
-                                        <td><font color="#000"><b>CRITICAL</b></font></td>
+                                        <td><strong>CRITICAL</strong></td>
                                     </tr>
                                     <tr>
                                         <td>Canned Sardines (150g)</td>
@@ -185,7 +157,7 @@
                 </table>
 
                 <br>
-                <p><small>* Note: Logging a donation triggers the system backend to register incoming logistics, helping HEP plan voucher allocation tokens for pending students.</small></p>
+                <p><small>* Note: This workspace aggregates real-time logistics data, helping HEP plan voucher allocation tokens for pending students.</small></p>
 
             </td>
         </tr>
