@@ -6,7 +6,7 @@
 </head>
 <body>
 
-    <h1>HEP Staff View</h1>
+    <h1>HEP Staff View | Gerobok-Prihatin System</h1>
     <hr>
 
     <table border="1" width="100%" cellpadding="10">
@@ -17,70 +17,118 @@
                     <li><a href="hep_staff.html">Dashboard</a></li>
                     <li><strong>Manage Inventory</strong></li>
                     <li><a href="HepDistribution.html">Manage Distribution</a></li>
-                    <li><a href="logout.html">Logout</a></li> </ul>
+                    <li><a href="logout.html">Logout</a></li>
+                </ul>
             </td>
             
             <td width="80%" valign="top">
-                <h2>Manage Stock Inventory</h2>
                 
+                <table border="1" width="100%" cellpadding="10">
+                    <tr>
+                        <td>
+                            <strong>Warehouse Facility:</strong> Central Depot Block A<br>
+                            <small>Stock Audited: Live Tracking Database</small>
+                        </td>
+                        <td align="center" width="22%">
+                            <strong>Total Registered SKU</strong>
+                            <h2 style="margin:5px;">2 Categories</h2>
+                        </td>
+                        <td align="center" width="22%">
+                            <strong>Total Stock Volume</strong>
+                            <h2 style="margin:5px;">185 Units</h2>
+                        </td>
+                        <td align="center" width="22%">
+                            <strong>Alert Thresholds</strong>
+                            <h2 style="margin:5px;"><font color="red">0 Critical Deficits</font></h2>
+                        </td>
+                    </tr>
+                </table>
+                <br><br>
+
                 <fieldset>
-                    <legend><h3>+ Add New Stock Item (Create)</h3></legend>
-                    <form action="HepInventory.html" method="POST"> <table border="0" cellpadding="5">
+                    <legend><h3>[CRUD - CREATE] Add New Stock Item Entry</h3></legend>
+                    <p style="font-size: 13px; color: #555;">Declare incoming bulk supply drop-offs to add inventory counts to student voucher distribution registers.</p>
+                    <br>
+                    <form action="HepInventory.html" method="get" onsubmit="alert('New item profile successfully initialized and stocked into system database.');"> 
+                        <table border="0" cellpadding="6" width="100%">
                             <tr>
-                                <td><label>Item Name:</label></td>
-                                <td><input type="text" name="item_name" required size="30"></td>
+                                <td width="20%"><label><b>Item Category:</b></label></td>
+                                <td>
+                                    <select style="padding: 3px;" required>
+                                        <option value="">-- Select Category --</option>
+                                        <option>Essential Staples (Rice, Flour)</option>
+                                        <option>Dry Food (Noodles, Biscuits)</option>
+                                        <option>Canned Food (Sardines, Beans)</option>
+                                        <option>Condiments & Oils</option>
+                                    </select>
+                                </td>
                             </tr>
                             <tr>
-                                <td><label>Quantity:</label></td>
-                                <td><input type="number" name="quantity" min="1" required style="width: 80px;"> units</td>
+                                <td><label><b>Item Brand Name:</b></label></td>
+                                <td><input type="text" placeholder="e.g., Premium White Rice (5kg)" required size="45"></td>
                             </tr>
                             <tr>
-                                <td><label>Expiry Date:</label></td>
-                                <td><input type="date" name="expiry_date" required></td>
+                                <td><label><b>Batch Quantity:</b></label></td>
+                                <td><input type="number" min="1" required style="width: 100px; padding: 3px;" placeholder="0"> units</td>
+                            </tr>
+                            <tr>
+                                <td><label><b>Batch Expiry Date:</b></label></td>
+                                <td><input type="date" required></td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td>
                                     <br>
-                                    <input type="submit" value="Add to Inventory">
+                                    <input type="submit" value="Add to Live Inventory Ledger" style="padding: 6px 15px; font-weight: bold; cursor: pointer;">
+                                    <input type="reset" value="Clear Form" style="padding: 6px 12px; cursor: pointer;">
                                 </td>
                             </tr>
                         </table>
                     </form>
                 </fieldset>
-                <br>
+                <br><br>
 
-                <h3>Current Stock Inventory Records</h3>
-                <table border="1" cellpadding="8" width="100%">
+                <h3>[CRUD - READ, UPDATE, DELETE] Current Stock Inventory Records</h3>
+                <p style="font-size: 14px; margin-top: 0;">Perform regular audits. Adjust active batch balances inline or wipe decommissioned stock allocations permanently.</p>
+                
+                <table border="1" cellpadding="8" width="100%" style="border-collapse: collapse;">
                     <thead>
                         <tr bgcolor="#f0f0f0">
-                            <th>Item Name</th>
-                            <th>Quantity</th>
-                            <th>Expiry Date</th>
-                            <th>Actions</th>
+                            <th>Item Asset Details</th>
+                            <th width="20%">Quantity Available</th>
+                            <th>Expiry Timeline Date</th>
+                            <th width="25%">Administrative Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Premium White Rice (5kg)</td>
-                            <td>35</td>
+                            <td><strong>Premium White Rice (5kg)</strong><br><small>Category: Essential Staples</small></td>
+                            <td align="center">
+                                <input type="number" value="35" min="0" style="width: 70px; padding: 3px; text-align: center;"> units
+                            </td>
                             <td>2027-08-12</td>
                             <td>
-                                <button type="button" onclick="alert('Trigger Update workflow')">Edit</button> 
-                                <button type="button" onclick="return confirm('Delete this item?')">Delete</button>
+                                <button type="button" style="background-color: #ffeeba; color: #856404; font-weight: bold; cursor: pointer;" onclick="alert('Database ledger tracking modified! Updated asset count saved to inventory logs.')">Update Stock</button> 
+                                <button type="button" style="background-color: #f8d7da; color: #721c24; cursor: pointer;" onclick="return confirm('Security Check: Are you absolutely certain you want to purge this entire asset row data from database registries?') ? alert('Row execution finalized. Data dropped.') : null;">Delete</button>
                             </td>
                         </tr>
                         <tr>
-                            <td>Instant Noodles (Pack of 5)</td>
-                            <td>150</td>
+                            <td><strong>Instant Noodles (Pack of 5)</strong><br><small>Category: Dry Provisions</small></td>
+                            <td align="center">
+                                <input type="number" value="150" min="0" style="width: 70px; padding: 3px; text-align: center;"> units
+                            </td>
                             <td>2026-12-25</td>
                             <td>
-                                <button type="button" onclick="alert('Trigger Update workflow')">Edit</button> 
-                                <button type="button" onclick="return confirm('Delete this item?')">Delete</button>
+                                <button type="button" style="background-color: #ffeeba; color: #856404; font-weight: bold; cursor: pointer;" onclick="alert('Database ledger tracking modified! Updated asset count saved to inventory logs.')">Update Stock</button> 
+                                <button type="button" style="background-color: #f8d7da; color: #721c24; cursor: pointer;" onclick="return confirm('Security Check: Are you absolutely certain you want to purge this entire asset row data from database registries?') ? alert('Row execution finalized. Data dropped.') : null;">Delete</button>
                             </td>
                         </tr>
                     </tbody>
                 </table>
+                <br>
+
+                <p><small>* Note: Any alterations submitted across these inventory matrices directly influence distribution request options on the <code>HepDistribution.html</code> portal window.</small></p>
+
             </td>
         </tr>
     </table>
