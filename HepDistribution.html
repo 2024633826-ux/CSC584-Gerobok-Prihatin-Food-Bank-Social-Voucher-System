@@ -43,7 +43,7 @@
 
                 <fieldset>
                     <legend><h3>Log Manual Emergency Request</h3></legend>
-                    <p style="font-size: 13px; color: #555;">Use this module to manually issue a voucher bypass if a student requests emergency rations in person at the office.</p>
+                    <p style="font-size: 13px;">Use this module to manually issue a voucher bypass if a student requests emergency rations in person at the office.</p>
                     
                     <form action="hepDistribution.html" method="get" onsubmit="alert('Emergency distribution request successfully initialized and added to queue.');">
                         <table border="0" cellpadding="6" width="100%">
@@ -70,7 +70,7 @@
                 <br><br>
 
                 <h2>Active Requests & Voucher Issuance</h2>
-                <p style="font-size: 14px; margin-top:0;">Review, modify item quantites, approve vouchers, or purge erroneous entries from the system queue.</p>
+                <p style="font-size: 14px; margin-top:0;">Review, modify item quantities, approve vouchers, or purge erroneous entries from the system queue.</p>
                 
                 <table border="1" cellpadding="8" width="100%" style="border-collapse: collapse;">
                     <thead>
@@ -94,11 +94,11 @@
                                 <input type="number" value="1" min="1" max="3" style="width: 45px; text-align: center;"> Bag
                             </td>
                             <td>2026-06-01</td>
-                            <td><font color="orange"><b>Awaiting HEP</b></font></td>
+                            <td><b>Awaiting HEP</b></td>
                             <td>
-                                <button type="button" style="background-color: #d4edda; color: #155724; font-weight: bold; cursor:pointer;" onclick="alert('Voucher authorized. Access Code & PIN generated and sent to Hamzah.')">Approve</button>
-                                <button type="button" style="background-color: #ffeeba; color: #856404; cursor:pointer;" onclick="alert('Request configurations updated successfully.')">Update Qty</button>
-                                <button type="button" style="background-color: #f8d7da; color: #721c24; cursor:pointer;" onclick="confirm('Are you sure you want to completely delete this request row from database logs?') ? alert('Row dropped.') : null;">Delete</button>
+                                <button type="button" style="font-weight: bold; cursor:pointer;" onclick="alert('Voucher authorized. Access Code & PIN generated and sent to Hamzah.')">Approve</button>
+                                <button type="button" style="cursor:pointer;" onclick="alert('Request configurations updated successfully.')">Update Qty</button>
+                                <button type="button" style="cursor:pointer;" onclick="confirm('Are you sure you want to completely delete this request row from database logs?') ? alert('Row dropped.') : null;">Delete</button>
                             </td>
                         </tr>
                         <tr>
@@ -111,22 +111,6 @@
                                 <input type="number" value="2" min="1" max="5" style="width: 45px; text-align: center;"> Packs
                             </td>
                             <td>2026-06-03</td>
-                            <td><font color="orange"><b>Awaiting HEP</b></font></td>
+                            <td><b>Awaiting HEP</b></td>
                             <td>
-                                <button type="button" style="background-color: #d4edda; color: #155724; font-weight: bold; cursor:pointer;" onclick="alert('Voucher authorized. Access Code & PIN generated and sent to Siti.')">Approve</button>
-                                <button type="button" style="background-color: #ffeeba; color: #856404; cursor:pointer;" onclick="alert('Request configurations updated successfully.')">Update Qty</button>
-                                <button type="button" style="background-color: #f8d7da; color: #721c24; cursor:pointer;" onclick="confirm('Are you sure you want to completely delete this request row from database logs?') ? alert('Row dropped.') : null;">Delete</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <br>
-
-                <p><small>* Note: Confirming an "Approve" action issues transactional commands that automatically subtract units directly from your <code>HepInventory.html</code> central database reserves.</small></p>
-
-            </td>
-        </tr>
-    </table>
-
-</body>
-</html>
+                                <button type="button" style="font-weight: bold; cursor
