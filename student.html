@@ -2,82 +2,154 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Student Dashboard</title>
+    <title>Student Portal - Digital Wallet</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333; margin: 0; padding: 0; }
+        .navbar { background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; padding: 15px 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .navbar h1 { margin: 0; font-size: 22px; font-weight: 600; }
+        
+        .layout-container { display: flex; padding: 30px; gap: 30px; max-width: 1400px; margin: auto; }
+        
+        /* Sidebar Navigation Menu */
+        .sidebar { width: 22%; background: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); height: fit-content; }
+        .sidebar h3 { color: #1e3c72; margin-top: 0; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; font-size: 16px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .sidebar ul { list-style: none; padding: 0; margin: 0; }
+        .sidebar li { margin-bottom: 8px; }
+        .sidebar a { display: block; padding: 12px 15px; color: #555; text-decoration: none; border-radius: 8px; font-weight: 500; transition: 0.3s; }
+        .sidebar a:hover { background-color: #f0f4f8; color: #1e3c72; }
+        .sidebar .active { background-color: #1e3c72; color: white; font-weight: bold; }
+        .sidebar .logout { color: #dc3545; }
+        .sidebar .logout:hover { background-color: #fff5f5; color: #dc3545; }
+
+        /* Main Workspace Content Area */
+        .main-content { width: 78%; display: flex; flex-direction: column; gap: 25px; }
+        
+        /* Grid Status Cards */
+        .status-grid { display: flex; gap: 20px; }
+        .info-card { flex: 1; background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-left: 5px solid #1e3c72; }
+        .info-card.eligible { border-left-color: #2da44e; }
+        .info-card h4 { margin: 0 0 8px 0; font-size: 13px; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
+        .info-card h1 { margin: 0; font-size: 32px; color: #111; }
+        .info-card p { margin: 5px 0 0 0; color: #666; font-size: 13px; }
+        .badge-active { display: inline-block; background-color: #dafbe1; color: #1a7f37; padding: 5px 12px; border-radius: 15px; font-weight: bold; font-size: 13px; margin-top: 5px; }
+
+        /* Ticket & Voucher Box Layout */
+        .workspace-box { background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .box-title { font-size: 18px; font-weight: 600; color: #222; margin: 0 0 5px 0; }
+        .box-desc { font-size: 13px; color: #666; margin: 0 0 20px 0; }
+        
+        .voucher-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        
+        /* Tiket Kupon Fizikal */
+        .coupon-ticket { background: #fff; border: 2px dashed #cbd5e1; border-radius: 10px; padding: 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 6px rgba(0,0,0,0.02); position: relative; }
+        .coupon-ticket::before, .coupon-ticket::after { content: ''; position: absolute; background: #f4f7f6; width: 20px; height: 20px; border-radius: 50%; left: -11px; top: calc(50% - 10px); border-right: 2px dashed #cbd5e1; }
+        .coupon-ticket::after { left: auto; right: -11px; border-right: none; border-left: 2px dashed #cbd5e1; }
+        
+        .coupon-details h5 { margin: 0 0 4px 0; color: #1e3c72; font-size: 15px; font-weight: 600; }
+        .coupon-details p { margin: 0; font-size: 13px; color: #555; }
+        .vch-tag { display: inline-block; font-size: 11px; background: #e2e8f0; color: #475569; padding: 2px 6px; border-radius: 4px; font-weight: bold; margin-bottom: 6px; }
+        
+        .barcode-box { text-align: center; background: white; padding: 8px; border-radius: 6px; border: 1px solid #e2e8f0; }
+        .barcode-lines { font-family: 'Courier New', monospace; font-size: 24px; letter-spacing: -2px; font-weight: bold; color: #000; line-height: 1; }
+        .barcode-num { font-family: monospace; font-size: 11px; color: #64748b; display: block; margin-top: 3px; }
+
+        /* Tables style */
+        .history-table { width: 100%; border-collapse: collapse; text-align: left; margin-top: 10px; }
+        .history-table th { background-color: #f8fafc; padding: 12px; font-weight: 600; color: #475569; border-bottom: 2px solid #e2e8f0; font-size: 13px; }
+        .history-table td { padding: 12px; border-bottom: 1px solid #f1f5f9; font-size: 13px; color: #334155; }
+    </style>
 </head>
 <body>
 
-    <h1>Student View</h1>
-    <hr>
+    <div class="navbar">
+        <h1>Gerobok-Prihatin | Student Dashboard</h1>
+    </div>
 
-    <table border="1" width="100%" cellpadding="10">
-        <tr>
-            <td width="20%" valign="top">
-                <h3>Food Bank System</h3>
-                <ul>
-                    <li><a href="#">View Food Bank</a></li>
-                    <li><strong>My Vouchers</strong></li>
-                    <li><a href="login.html">Logout</a></li>
-                </ul>
-            </td>
+    <div class="layout-container">
+        <div class="sidebar">
+            <h3>Student Menu</h3>
+            <ul>
+                <li><a href="student_marketplace.html">🛒 View Food Bank</a></li>
+                <li><a href="student.html" class="active">🎟️ My Vouchers</a></li>
+                <li><a href="login.html" class="logout">🚪 Logout</a></li>
+            </ul>
+        </div>
+        
+        <div class="main-content">
             
-            <td width="80%" valign="top">
-                <table border="1" width="100%" cellpadding="10">
-                    <tr>
-                        <td>
-                            <h3>Welcome, Hamzah!</h3>
-                            <strong>Voucher Balance</strong>
-                            <h1>5</h1>
-                            <p>vouchers</p>
-                        </td>
-                        <td valign="top" width="35%">
-                            <strong>Status</strong>
-                            <h2>Eligible</h2>
-                            <p>You can claim items.</p>
-                        </td>
-                    </tr>
-                </table>
-                <br>
+            <div class="status-grid">
+                <div class="info-card">
+                    <h4>Voucher Wallet Balance</h4>
+                    <h1>3 Vouchers Available</h1>
+                    <p>Kuota akan diperbaharui pada bulan depan.</p>
+                </div>
+                <div class="info-card eligible">
+                    <h4>Bantuan Kebajikan Status</h4>
+                    <div class="badge-active">🟢 LAYAK & AKTIF</div>
+                    <p>Sila tuntut barangan keperluan anda sebelum tamat tempoh.</p>
+                </div>
+            </div>
 
-                <h3>Recent Activity</h3>
-                <table border="1" cellpadding="5" width="100%">
+            <div class="workspace-box">
+                <h3 class="box-title">🎟️ Active Digital Vouchers (Sedia Diimbas)</h3>
+                <p class="box-desc">Tunjukkan kod bar di bawah kepada petugas kaunter HEP semasa mengambil barangan fizikal di stor pusat.</p>
+                
+                <div class="voucher-grid">
+                    <div class="coupon-ticket">
+                        <div class="coupon-details">
+                            <span class="vch-tag">REF: RICE-5KG</span>
+                            <h5>Premium White Rice (5kg)</h5>
+                            <p style="color: #1a7f37; font-weight: 500;">Status: Approved</p>
+                            <p style="font-size: 11px; color: #94a3b8; margin-top: 4px;">Tarikh Mohon: 2026-06-01</p>
+                        </div>
+                        <div class="barcode-box">
+                            <div class="barcode-lines">||| | |||| | || ||| |</div>
+                            <span class="barcode-num">*88201-RICE*</span>
+                        </div>
+                    </div>
+
+                    <div class="coupon-ticket">
+                        <div class="coupon-details">
+                            <span class="vch-tag">REF: NODL-MAMEE</span>
+                            <h5>Instant Noodles (Pack of 5)</h5>
+                            <p style="color: #1a7f37; font-weight: 500;">Status: Approved</p>
+                            <p style="font-size: 11px; color: #94a3b8; margin-top: 4px;">Tarikh Mohon: 2026-06-03</p>
+                        </div>
+                        <div class="barcode-box">
+                            <div class="barcode-lines">|| ||| | ||| || | || |</div>
+                            <span class="barcode-num">*55341-NODL*</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="workspace-box">
+                <h3 class="box-title">📜 Sejarah Pengambilan Makanan</h3>
+                <table class="history-table">
                     <thead>
                         <tr>
-                            <th>Date</th>
-                            <th>Activity</th>
-                            <th>Details</th>
+                            <th>Tarikh Transaksi</th>
+                            <th>Aktiviti & Log Sistem</th>
+                            <th>Butiran Penerangan / Item</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
+                            <td>2026-05-15</td>
+                            <td><b>Tuntutan Fizikal Berjaya</b></td>
+                            <td>Kupon ID <span style="font-family: monospace;">VCH-2026-000</span> telah diimbas dan diambil (Canned Sardines).</td>
+                        </tr>
+                        <tr>
+                            <td>2026-05-01</td>
+                            <td><b>Agihan Kuota Bulanan</b></td>
+                            <td>Sistem memasukkan 5 token baucar bantuan sosial universiti baharu.</td>
                         </tr>
                     </tbody>
                 </table>
-                <br>
+            </div>
 
-                <h3>Available Food Items</h3>
-                <table border="1" cellpadding="5" width="100%">
-                    <thead>
-                        <tr>
-                            <th>Item Name</th>
-                            <th>Available Quantity</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td><button type="button">Claim / Request</button></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p><small>* Note: Claiming items deducts vouchers from your available balance.</small></p>
-            </td>
-        </tr>
-    </table>
+        </div>
+    </div>
 
 </body>
 </html>
