@@ -23,31 +23,31 @@
             
             <td width="80%" valign="top">
                 
-                <table border="1" width="100%" cellpadding="10">
+                <table border="1" width="100%" cellpadding="10" style="background-color: #fafafa;">
                     <tr>
                         <td>
                             <strong>Warehouse Facility:</strong> Central Depot Block A<br>
                             <small>Stock Audited: Live Tracking Database</small>
                         </td>
-                        <td align="center" width="22%">
+                        <td align="center" width="22%" bgcolor="#f0f0f0">
                             <strong>Total Registered SKU</strong>
                             <h2 style="margin:5px;">2 Categories</h2>
                         </td>
-                        <td align="center" width="22%">
+                        <td align="center" width="22%" bgcolor="#e0e0e0">
                             <strong>Total Stock Volume</strong>
                             <h2 style="margin:5px;">185 Units</h2>
                         </td>
-                        <td align="center" width="22%">
-                            <strong>Alert Thresholds</strong>
-                            <h2 style="margin:5px;">0 Critical Deficits</h2>
+                        <td align="center" width="22%" bgcolor="#333333">
+                            <font color="#ffffff"><strong>Alert Thresholds</strong></font>
+                            <h2 style="margin:5px;"><font color="#ffffff">0 Deficits</font></h2>
                         </td>
                     </tr>
                 </table>
                 <br><br>
 
-                <fieldset>
+                <fieldset style="border: 1px solid #333333;">
                     <legend><h3>Add New Stock Item Entry</h3></legend>
-                    <p style="font-size: 13px;">Declare incoming bulk supply drop-offs to add inventory counts to student voucher distribution registers.</p>
+                    <p style="font-size: 13px; color: #666666;">Declare incoming bulk supply drop-offs to add inventory counts to student voucher distribution registers.</p>
                     <br>
                     <form action="HepInventory.html" method="get" onsubmit="alert('New item profile successfully initialized and stocked into system database.');"> 
                         <table border="0" cellpadding="6" width="100%">
@@ -79,8 +79,8 @@
                                 <td></td>
                                 <td>
                                     <br>
-                                    <input type="submit" value="Add to Live Inventory Ledger" style="padding: 6px 15px; font-weight: bold; cursor: pointer;">
-                                    <input type="reset" value="Clear Form" style="padding: 6px 12px; cursor: pointer;">
+                                    <input type="submit" value="Add to Live Inventory Ledger" style="padding: 6px 15px; font-weight: bold; background-color: #333333; color: #ffffff; border: 1px solid #000000; cursor: pointer;">
+                                    <input type="reset" value="Clear Form" style="padding: 6px 12px; background-color: #ffffff; color: #333333; border: 1px solid #cccccc; cursor: pointer;">
                                 </td>
                             </tr>
                         </table>
@@ -89,19 +89,49 @@
                 <br><br>
 
                 <h3>Current Stock Inventory Records</h3>
-                <p style="font-size: 14px; margin-top: 0;">Perform regular audits. Adjust active batch balances inline or wipe decommissioned stock allocations permanently.</p>
+                <p style="font-size: 14px; margin-top: 0; color: #666666;">Perform regular audits. Adjust active batch balances inline or wipe decommissioned stock allocations permanently.</p>
                 
                 <table border="1" cellpadding="8" width="100%" style="border-collapse: collapse;">
                     <thead>
-                        <tr bgcolor="#f0f0f0">
-                            <th>Item Asset Details</th>
-                            <th width="20%">Quantity Available</th>
-                            <th>Expiry Timeline Date</th>
-                            <th width="25%">Administrative Actions</th>
+                        <tr bgcolor="#333333">
+                            <th><font color="#ffffff">Item Asset Details</font></th>
+                            <th width="20%"><font color="#ffffff">Quantity Available</font></th>
+                            <th><font color="#ffffff">Expiry Timeline Date</font></th>
+                            <th width="25%"><font color="#ffffff">Administrative Actions</font></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>Premium White Rice (5kg)</strong><br><small>Category: Essential Staples</small></td>
+                            <td><strong>Premium White Rice (5kg)</strong><br><small style="color:#666666;">Category: Essential Staples</small></td>
                             <td align="center">
-                                <input type="number" value="35" min="
+                                <input type="number" value="35" min="0" style="width: 70px; padding: 3px; text-align: center;"> units
+                            </td>
+                            <td>2027-08-12</td>
+                            <td>
+                                <button type="button" style="background-color: #e0e0e0; color: #000000; border: 1px solid #cccccc; font-weight: bold; padding: 4px 8px; cursor: pointer;" onclick="alert('Database ledger tracking modified! Updated asset count saved to inventory logs.')">Update Stock</button> 
+                                <button type="button" style="background-color: #333333; color: #ffffff; border: 1px solid #000000; padding: 4px 8px; cursor: pointer;" onclick="return confirm('Security Check: Are you absolutely certain you want to purge this entire asset row data from database registries?') ? alert('Row execution finalized. Data dropped.') : null;">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Instant Noodles (Pack of 5)</strong><br><small style="color:#666666;">Category: Dry Provisions</small></td>
+                            <td align="center">
+                                <input type="number" value="150" min="0" style="width: 70px; padding: 3px; text-align: center;"> units
+                            </td>
+                            <td>2026-12-25</td>
+                            <td>
+                                <button type="button" style="background-color: #e0e0e0; color: #000000; border: 1px solid #cccccc; font-weight: bold; padding: 4px 8px; cursor: pointer;" onclick="alert('Database ledger tracking modified! Updated asset count saved to inventory logs.')">Update Stock</button> 
+                                <button type="button" style="background-color: #333333; color: #ffffff; border: 1px solid #000000; padding: 4px 8px; cursor: pointer;" onclick="return confirm('Security Check: Are you absolutely certain you want to purge this entire asset row data from database registries?') ? alert('Row execution finalized. Data dropped.') : null;">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+
+                <p><small style="color: #666666;">* Note: Any alterations submitted across these inventory matrices directly influence distribution request options on the <code>HepDistribution.html</code> portal window.</small></p>
+
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
