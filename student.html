@@ -14,8 +14,9 @@
             <td width="20%" valign="top">
                 <h3>Student Portal</h3>
                 <ul>
-                    <li><strong>Voucher Dashboard</strong></li>
-                    <li><a href="logout.html">Logout</a></li> </ul>
+                    <li><a href="studentMarketplace.html">View Food Bank</a></li> <li><strong>Voucher Dashboard</strong></li>
+                    <li><a href="logout.html">Logout</a></li> 
+                </ul>
             </td>
             
             <td width="80%" valign="top">
@@ -34,33 +35,39 @@
                 </table>
                 <br><br>
 
-                <h3>Available Items at Central Gerobok Storage</h3>
-                <p>Anda boleh memohon penebusan barangan di bawah menggunakan baki token voucher anda.</p>
+                <h3>Your Requested Vouchers & Claims Status</h3>
+                <p>Berikut adalah senarai voucher digital anda yang telah dituntut atau sedang diproses oleh HEP.</p>
                 
                 <table border="1" width="100%" cellpadding="8" style="border-collapse: collapse;">
                     <thead>
                         <tr bgcolor="#f0f0f0">
-                            <th>Item Name</th>
-                            <th>Stock Status</th>
-                            <th>Voucher Cost</th>
-                            <th>Action</th>
+                            <th>Voucher ID</th>
+                            <th>Item Requested</th>
+                            <th>Voucher No</th>
+                            <th>PIN</th>
+                            <th>Status Approval</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
+                            <td>VCH-4412</td>
                             <td>Premium White Rice (5kg)</td>
-                            <td>In Stock (35 available)</td>
-                            <td>1 Token</td>
-                            <td><button type="button" onclick="alert('Permohonan penebusan beras dihantar ke HEP untuk kelulusan!')">Claim Item</button></td>
+                            <td>8821-9923-1102</td>
+                            <td>4412</td>
+                            <td><strong style="color: green;">APPROVED (Ready to Collect)</strong></td>
                         </tr>
                         <tr>
+                            <td>VCH-4589</td>
                             <td>Instant Noodles (Pack of 5)</td>
-                            <td>In Stock (150 available)</td>
-                            <td>1 Token</td>
-                            <td><button type="button" onclick="alert('Permohonan penebusan mi segera dihantar ke HEP untuk kelulusan!')">Claim Item</button></td>
+                            <td><em>Pending Approval</em></td>
+                            <td><em>-</em></td>
+                            <td><strong style="color: orange;">PENDING HEP VERIFICATION</strong></td>
                         </tr>
                     </tbody>
                 </table>
+                
+                <br><br>
+                <p>Need more items? <a href="studentMarketplace.html"><button type="button" style="padding: 5px 15px; font-weight: bold;">Go to Marketplace to Claim Items</button></a></p>
             </td>
         </tr>
     </table>
