@@ -39,15 +39,15 @@
                         </td>
                         <td align="center" width="22%">
                             <strong>Alert Thresholds</strong>
-                            <h2 style="margin:5px;"><font color="red">0 Critical Deficits</font></h2>
+                            <h2 style="margin:5px;">0 Critical Deficits</h2>
                         </td>
                     </tr>
                 </table>
                 <br><br>
 
                 <fieldset>
-                    <legend><h3>[CRUD - CREATE] Add New Stock Item Entry</h3></legend>
-                    <p style="font-size: 13px; color: #555;">Declare incoming bulk supply drop-offs to add inventory counts to student voucher distribution registers.</p>
+                    <legend><h3>Add New Stock Item Entry</h3></legend>
+                    <p style="font-size: 13px;">Declare incoming bulk supply drop-offs to add inventory counts to student voucher distribution registers.</p>
                     <br>
                     <form action="HepInventory.html" method="get" onsubmit="alert('New item profile successfully initialized and stocked into system database.');"> 
                         <table border="0" cellpadding="6" width="100%">
@@ -88,7 +88,7 @@
                 </fieldset>
                 <br><br>
 
-                <h3>[CRUD - READ, UPDATE, DELETE] Current Stock Inventory Records</h3>
+                <h3>Current Stock Inventory Records</h3>
                 <p style="font-size: 14px; margin-top: 0;">Perform regular audits. Adjust active batch balances inline or wipe decommissioned stock allocations permanently.</p>
                 
                 <table border="1" cellpadding="8" width="100%" style="border-collapse: collapse;">
@@ -104,34 +104,4 @@
                         <tr>
                             <td><strong>Premium White Rice (5kg)</strong><br><small>Category: Essential Staples</small></td>
                             <td align="center">
-                                <input type="number" value="35" min="0" style="width: 70px; padding: 3px; text-align: center;"> units
-                            </td>
-                            <td>2027-08-12</td>
-                            <td>
-                                <button type="button" style="background-color: #ffeeba; color: #856404; font-weight: bold; cursor: pointer;" onclick="alert('Database ledger tracking modified! Updated asset count saved to inventory logs.')">Update Stock</button> 
-                                <button type="button" style="background-color: #f8d7da; color: #721c24; cursor: pointer;" onclick="return confirm('Security Check: Are you absolutely certain you want to purge this entire asset row data from database registries?') ? alert('Row execution finalized. Data dropped.') : null;">Delete</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>Instant Noodles (Pack of 5)</strong><br><small>Category: Dry Provisions</small></td>
-                            <td align="center">
-                                <input type="number" value="150" min="0" style="width: 70px; padding: 3px; text-align: center;"> units
-                            </td>
-                            <td>2026-12-25</td>
-                            <td>
-                                <button type="button" style="background-color: #ffeeba; color: #856404; font-weight: bold; cursor: pointer;" onclick="alert('Database ledger tracking modified! Updated asset count saved to inventory logs.')">Update Stock</button> 
-                                <button type="button" style="background-color: #f8d7da; color: #721c24; cursor: pointer;" onclick="return confirm('Security Check: Are you absolutely certain you want to purge this entire asset row data from database registries?') ? alert('Row execution finalized. Data dropped.') : null;">Delete</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <br>
-
-                <p><small>* Note: Any alterations submitted across these inventory matrices directly influence distribution request options on the <code>HepDistribution.html</code> portal window.</small></p>
-
-            </td>
-        </tr>
-    </table>
-
-</body>
-</html>
+                                <input type="number" value="35" min="
